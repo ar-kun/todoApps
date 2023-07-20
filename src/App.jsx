@@ -1,4 +1,6 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
+import Todos from './components/Todos';
 
 function App() {
  const [todos, setTodos] = useState([
@@ -17,14 +19,17 @@ function App() {
    title: 'Study React with Ninja Ken',
    completed: false,
   },
+  {
+   id: 4,
+   title: 'Study React with Hina Ryuuzaki',
+   completed: false,
+  },
  ]);
 
  return (
   <div>
    <h1>My Todo List</h1>
-   {todos.map((todo) => {
-    return <p key={todo.id}>{todo.title}</p>;
-   })}
+   <Todos todos={todos} />
   </div>
  );
 }
